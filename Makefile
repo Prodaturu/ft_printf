@@ -6,7 +6,7 @@
 #    By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 00:27:53 by sprodatu          #+#    #+#              #
-#    Updated: 2023/11/12 07:40:51 by sprodatu         ###   ########.fr        #
+#    Updated: 2023/11/12 10:04:32 by sprodatu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -I./include
 
 # Library Name
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 # List of source files
 LIBFT_SRCS = libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.c libft/ft_isprint.c libft/ft_strlen.c \

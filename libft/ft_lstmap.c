@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:12:56 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/10/27 04:45:15 by sprodatu         ###   ########.fr       */
+/*   Updated: 2023/11/12 11:28:02 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new);
 }
- 
