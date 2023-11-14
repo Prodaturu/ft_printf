@@ -6,11 +6,17 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:13:51 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/12 11:27:33 by sprodatu         ###   ########.fr       */
+/*   Updated: 2023/11/14 07:40:41 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int	ft_printf(const char *format_str, ...)
 {
@@ -26,7 +32,7 @@ int	ft_printf(const char *format_str, ...)
 		if (*current == '%')
 		{
 			current++;
-			format_information = parse_format(&current, args);
+			format_information = parse_format(&current);
 			printed_char_count = handle_format(format_information, args);
 		}
 		else

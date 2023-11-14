@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 00:50:47 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/12 07:43:01 by sprodatu         ###   ########.fr       */
+/*   Updated: 2023/11/14 07:30:58 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_list
 {
 	int		width;
+	int		precision;
 	int		minus;
 	int		zero;
 	int		dot;
@@ -29,6 +30,9 @@ typedef struct s_list
 	char	specifier;
 }			t_format;
 
-int		ft_printf(const char *str, ...);
+int			is_flag(char c);
+t_format	parse_format(const char **current, va_list args);
+int			handle_format(t_format format_info, va_list args);
+int			ft_printf(const char *str, ...);
 
 #endif

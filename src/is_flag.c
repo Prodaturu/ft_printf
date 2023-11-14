@@ -1,27 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_flag.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 22:32:34 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/14 05:35:33 by sprodatu         ###   ########.fr       */
+/*   Created: 2023/11/14 05:33:53 by sprodatu          #+#    #+#             */
+/*   Updated: 2023/11/14 07:35:44 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
-{
-	int	count;
-
-	count = ft_printf("Hello, World!\n");
-	printf("Printed %d characters\n", count);
-	count = ft_printf("This is a number: %d\n", 42);
-	printf("Printed %d characters\n", count);
-	count = ft_printf("Here's a string: %s\n", "Sample String");
-	printf("Printed %d characters\n", count);
-	return (0);
-}
+int is_flag(char c)
+	return (c == '-' || c == '+' || c == ' ' || c == '#' || c == '0');
