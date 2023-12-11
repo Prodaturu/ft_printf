@@ -6,17 +6,25 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 01:02:05 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/17 01:38:49 by sprodatu         ###   ########.fr       */
+/*   Updated: 2023/11/19 01:44:09 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	handle_char_minus(t_format format_info, int c)
 {
-	write(1, &c, 1);
-	return ;
+	int		count;
+
+	count = 0;
+	count += ft_putchar(c);
+	while ((format_info.width) > 1)
+	{
+		count += ft_putchar(' ');
+		format_info.width--;
+	}
+	return (count);
 }
 
 int	handle_char(t_format format_info, va_list args)
@@ -27,35 +35,15 @@ int	handle_char(t_format format_info, va_list args)
 	c = va_arg(args, int);
 	count = 0;
 	if (format_info.minus == 1)
-	{
-		count = handle_char_minus(format_info, args);
-		return (count);
-	}
+		count += handle_char_minus(format_info, c);
 	else
 	{
-		while (--format_info.width > 0)
+		while (format_info.width > 1)
 		{
-			ft_putchar(' ');
-			count++;
+			count += ft_putchar(' ');
+			format_info.width--;
 		}
-		ft_putchar(c);
-		count++;
+		count += ft_putchar(c);
 	}
 	return (count);
-}
-
-int	handle_char_minus(t_format format_info, va_list args)
-{
-	char	c;
-	int		count;
-
-	c = va_arg(args, int);
-	count = 0;
-	ft_putchar(c);
-	count++;
-	while (--format_info.width > 0)
-	{
-		ft_putchar(' ');
-		count++;
-	}
 }

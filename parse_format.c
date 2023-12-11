@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:43:39 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/14 07:35:03 by sprodatu         ###   ########.fr       */
+/*   Updated: 2023/11/26 23:40:31 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	initialize_format_info(t_format	*format_info)
 {
 	format_info->width = 0;
-	format_info->precision = 0;
+	format_info->precision = -1;
 	format_info->minus = 0;
 	format_info->zero = 0;
 	format_info->dot = 0;
@@ -89,13 +89,46 @@ t_format	parse_format(const char **currents_ptr)
 			parse_width(currents_ptr, &format_info);
 		else if (**currents_ptr == '.')
 			parse_precision(currents_ptr, &format_info);
-		else
+		else if (!format_info.specifier)
 		{
 			format_info.specifier = **currents_ptr;
-			(*currents_ptr)++;
 			break ;
 		}
-		(*currents_ptr)++;
+		else
+			(*currents_ptr)++;
 	}
 	return (format_info);
 }
+
+// t_format	parse_format(const char **currents_ptr)
+// {
+// 	t_format	format_info;
+
+// 	initialize_format_info(&format_info);
+// 	while (**currents_ptr)
+// 	{
+// 		if (is_flag(**currents_ptr))
+// 			parse_flags(currents_ptr, &format_info);
+// 		else if (ft_isdigit(**currents_ptr))
+// 			parse_width(currents_ptr, &format_info);
+// 		else if (**currents_ptr == '.')
+// 			parse_precision(currents_ptr, &format_info);
+// 		else if (**currents_ptr == '%' && !format_info.specifier)
+// 		{
+// 			(*currents_ptr)++;
+// 			if (**currents_ptr != '%')
+// 			{
+// 				format_info.specifier = '%';
+// 				break ;
+// 			}
+// 		}
+// 		else if (!format_info.specifier)
+// 		{
+// 			format_info.specifier = **currents_ptr;
+// 			break ;
+// 		}
+// 		else
+// 			(*currents_ptr)++;
+// 	}
+// 	return (format_info);
+// }

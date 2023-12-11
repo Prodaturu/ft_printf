@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   zero_padding.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 11:45:30 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/10/17 13:57:12 by sprodatu         ###   ########.fr       */
+/*   Created: 2023/11/20 14:29:45 by sprodatu          #+#    #+#             */
+/*   Updated: 2023/11/22 18:37:09 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+size_t	zero_padding(size_t padding)
 {
-	if (s != NULL)
+	size_t	count;
+
+	count = 0;
+	while (padding)
 	{
-		while (*s)
-		{
-			write(fd, s, 1);
-			s++;
-		}
+		count += ft_putchar('0');
+		padding--;
 	}
+	return (count);
 }
