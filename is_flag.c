@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 05:33:53 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/17 01:56:50 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:54:47 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 int	is_flag(char c)

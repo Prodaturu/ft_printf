@@ -6,12 +6,12 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 23:17:02 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/22 23:23:49 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:49:59 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
+#include "libft/libft.h"
 
 void	add_padding(char *str, int num_len, int precision, int is_neg)
 {

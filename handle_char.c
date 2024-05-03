@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 01:02:05 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/19 01:44:09 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:51:57 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 int	handle_char_minus(t_format format_info, int c)

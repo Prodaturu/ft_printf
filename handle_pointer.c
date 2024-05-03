@@ -6,12 +6,84 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:01:08 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/12/08 07:16:41 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:54:25 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
+
+int	prt_hex_digit(uintptr_t digit, int case_type)
+{
+	if (digit < 10)
+		return (ft_putchar('0' + digit));
+	else
+	{
+		if (case_type)
+			return (ft_putchar('A' + digit - 10));
+		else
+			return (ft_putchar('a' + digit - 10));
+	}
+}
+
+int	prt_hex(uintptr_t num, int case_type)
+{
+	int			count;
+	uintptr_t	digit;
+	uintptr_t	divisor;
+	int			num_digits;
+	int			i;
+
+	divisor = 1;
+	num_digits = calculate_hex_digits(num);
+	count = 0;
+	i = 1;
+	while (i < num_digits)
+	{
+		divisor *= 16;
+		i++;
+	}
+	i = 0;
+	while (i < num_digits)
+	{
+		digit = (num / divisor) % 16;
+		count += prt_hex_digit(digit, case_type);
+		divisor /= 16;
+		i++;
+	}
+	return (count);
+}
+
+int	print_pointer_prefix(uintptr_t address, t_format format_info)
+{
+	int	count;
+
+	count = ft_putstr("0x");
+	if (address == 0 && format_info.precision != 0)
+		return (count + ft_putchar('0'));
+	return (count);
+}
+
+int	handle_pointer(t_format format_info, void *ptr)
+{
+	uintptr_t	address;
+	int			count;
+	int			num_digits;
+	int			padding;
+
+	address = (uintptr_t)ptr;
+	num_digits = calculate_hex_digits(address) + 2;
+	padding = format_info.width - num_digits;
+	count = 0;
+	if (!format_info.minus && padding > 0)
+		count += print_padding(padding);
+	count += print_pointer_prefix(address, format_info);
+	if (address != 0)
+		count += prt_hex(address, 0);
+	if (format_info.minus && padding > 0)
+		count += print_padding(padding);
+	return (count);
+}
 
 // void put_ptr(uintptr_t address)
 // {
@@ -112,48 +184,6 @@
 // }
 
 // Helper function to calculate the number of hex digits needed
-
-int	prt_hex_digit(uintptr_t digit, int case_type)
-{
-	if (digit < 10)
-		return (ft_putchar('0' + digit));
-	else
-	{
-		if (case_type)
-			return (ft_putchar('A' + digit - 10));
-		else
-			return (ft_putchar('a' + digit - 10));
-	}
-}
-
-int	prt_hex(uintptr_t num, int case_type)
-{
-	int			count;
-	uintptr_t	digit;
-	uintptr_t	divisor;
-	int			num_digits;
-	int			i;
-
-	divisor = 1;
-	num_digits = calculate_hex_digits(num);
-	count = 0;
-	i = 1;
-	while (i < num_digits)
-	{
-		divisor *= 16;
-		i++;
-	}
-	i = 0;
-	while (i < num_digits)
-	{
-		digit = (num / divisor) % 16;
-		count += prt_hex_digit(digit, case_type);
-		divisor /= 16;
-		i++;
-	}
-	return (count);
-}
-
 // int	handle_pointer(t_format format_info, void *ptr)
 // {
 // 	uintptr_t	address;
@@ -189,34 +219,3 @@ int	prt_hex(uintptr_t num, int case_type)
 // 	}
 // 	return (count);
 // }
-
-int	print_pointer_prefix(uintptr_t address, t_format format_info)
-{
-	int	count;
-
-	count = ft_putstr("0x");
-	if (address == 0 && format_info.precision != 0)
-		return (count + ft_putchar('0'));
-	return (count);
-}
-
-int	handle_pointer(t_format format_info, void *ptr)
-{
-	uintptr_t	address;
-	int			count;
-	int			num_digits;
-	int			padding;
-
-	address = (uintptr_t)ptr;
-	num_digits = calculate_hex_digits(address) + 2;
-	padding = format_info.width - num_digits;
-	count = 0;
-	if (!format_info.minus && padding > 0)
-		count += print_padding(padding);
-	count += print_pointer_prefix(address, format_info);
-	if (address != 0)
-		count += prt_hex(address, 0);
-	if (format_info.minus && padding > 0)
-		count += print_padding(padding);
-	return (count);
-}

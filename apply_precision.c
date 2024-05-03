@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 04:42:16 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/12/08 04:42:40 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:48:30 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 char	*apply_precision(char *value_str, int precision)

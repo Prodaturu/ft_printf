@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 04:31:23 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/12/08 04:31:57 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:53:07 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 void	handle_int_flags(t_format *format_info, int value, int *is_negative)

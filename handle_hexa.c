@@ -6,12 +6,27 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 03:05:32 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/12/07 19:23:23 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:52:55 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
+
+int	handle_hexa(t_format f_info, unsigned int num)
+{
+	int	case_type;
+
+	case_type = 0;
+	if (f_info.specifier == 'x' || f_info.specifier == 'X')
+	{
+		if (f_info.specifier == 'X')
+			case_type = 1;
+		if (f_info.minus || f_info.precision >= 0)
+			f_info.zero = 0;
+	}
+	return (put_hexa(num, case_type, f_info));
+}
 
 // int	print_hex_digit(unsigned int digit, int case_type)
 // {
@@ -103,22 +118,6 @@
 // 		count += prnt_hexpad(values[3], ' ');
 // 	return (count);
 // }
-
-int	handle_hexa(t_format f_info, unsigned int num)
-{
-	int	case_type;
-
-	case_type = 0;
-	if (f_info.specifier == 'x' || f_info.specifier == 'X')
-	{
-		if (f_info.specifier == 'X')
-			case_type = 1;
-		if (f_info.minus || f_info.precision >= 0)
-			f_info.zero = 0;
-	}
-	return (put_hexa(num, case_type, f_info));
-}
-
 // Values array:
 // v[0] -> num_digits;
 // v[1] -> prefix_len;

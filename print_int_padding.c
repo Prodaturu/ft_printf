@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 06:26:59 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/12/08 06:29:41 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:55:11 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 int	print_int_padding(int pad_width, char pad_char)

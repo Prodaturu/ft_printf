@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 05:02:37 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/12/08 10:20:44 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:53:13 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 char	*handle_int_min_and_convert(int value, int *is_neg)

@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:43:39 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/26 23:40:31 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:54:51 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 static void	initialize_format_info(t_format	*format_info)

@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:35:44 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/28 02:59:30 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:54:40 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 void	handle_null_string(char **string, t_format format_info, size_t *str_len)

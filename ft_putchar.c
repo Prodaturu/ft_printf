@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 02:03:08 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/11/18 15:27:11 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:50:57 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 #include "ft_printf.h"
 
 int	ft_putchar(char c)
