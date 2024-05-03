@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 20:08:30 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/10/26 18:45:46 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:18:59 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 	newnode = (t_list *)malloc(sizeof(t_list));
 	if (!newnode)
 		return (NULL);
-	newnode->content = content;
+	newnode->value = content;
 	(*newnode).next = NULL;
 	return (newnode);
 }

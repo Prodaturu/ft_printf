@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 21:00:05 by sprodatu          #+#    #+#             */
-/*   Updated: 2023/10/28 07:20:02 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:18:49 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_node
 {
-	void			*content;
+	void			*value;
 	struct s_node	*next;
 }	t_list;
 
